@@ -1,0 +1,50 @@
+<html>
+<head>
+<title> I hate doodleMaths </title>
+</head>
+<body>
+
+<!-- your html goes here -->
+<svg height="600" width="600">
+<polygon points="0,0 600,0 600,600 0,600" fill="#960606"/>
+
+<image id="kitten" xlink:href="file:///Users/katiareeves/my%20drawings/kitten1111111111.png" x="100" y="100" width="800" height="800"/>
+</svg>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+// your javascript goes here
+var keys = {
+  "Up": "w",
+  "Down": "s",
+  "Left": "a",
+  "Right": "d"
+}
+
+var kitten = $("#kitten");
+var x = parseInt(kitten.attr("x"));
+var y = parseInt(kitten.attr("y"));
+
+document.addEventListener('keypress', (event) => {
+  const keyName = event.key;
+
+  if (keyName == keys.Up) {
+    y -= 5
+  } else if (keyName == keys.Down) {
+    y += 5
+  } else if (keyName == keys.Right) {
+    x += 5
+  } else if (keyName == keys.Left) {
+    x -= 5
+  }
+
+  kitten.attr("x", x);
+  kitten.attr("y", y);
+
+});
+
+
+
+</script>
+</body>
+</html>
