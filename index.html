@@ -11,14 +11,17 @@
 <image id="kitten" xlink:href="file:///Users/katiareeves/my%20drawings/kitten1111111111.png" x="100" y="100" width="800" height="800"/>
 </svg>
 
+<image  xlink:href="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fi.stack.imgur.com%2FQSFeU.png&f=1" x="300" y="300" width="200" height="200"/>
+</svg>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 // your javascript goes here
 var keys = {
-  "Up": "w",
-  "Down": "s",
-  "Left": "a",
-  "Right": "d"
+  "Up": "KeyW",
+  "Down": "KeyS",
+  "Left": "KeyA",
+  "Right": "KeyD"
 }
 
 var kitten = $("#kitten");
@@ -27,14 +30,15 @@ var y = parseInt(kitten.attr("y"));
 
 document.addEventListener('keypress', (event) => {
   const keyName = event.key;
+  const codeName = event.code;
 
-  if (keyName == keys.Up) {
+  if (codeName == keys.Up) {
     y -= 5
-  } else if (keyName == keys.Down) {
+  } else if (codeName == keys.Down) {
     y += 5
-  } else if (keyName == keys.Right) {
+  } else if (codeName == keys.Right) {
     x += 5
-  } else if (keyName == keys.Left) {
+  } else if (codeName == keys.Left) {
     x -= 5
   }
 
